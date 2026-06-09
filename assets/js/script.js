@@ -17,6 +17,28 @@
       window.addEventListener('scroll', onScroll, { passive: true });
     }
 
+    // Menu burger mobile
+    var burger = document.querySelector('.nav-burger');
+    var navLinks = document.getElementById('nav-links');
+    if (burger && navLinks) {
+      var setMenu = function (open) {
+        navLinks.classList.toggle('open', open);
+        burger.classList.toggle('open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+        document.body.classList.toggle('nav-open', open);
+      };
+      burger.addEventListener('click', function () {
+        setMenu(!navLinks.classList.contains('open'));
+      });
+      navLinks.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setMenu(false); });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setMenu(false);
+      });
+    }
+
     // Animations « reveal » à l'apparition dans le viewport
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
