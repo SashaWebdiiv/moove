@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Sauvegarde des images originales (lourdes, hors site)
+_originaux_backup/
+
+# Dossiers de dépendances éventuels
+node_modules/
