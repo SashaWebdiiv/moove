@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://moove-live.com/sitemap.xml
+Sitemap: https://www.moove-live.com/sitemap.xml
